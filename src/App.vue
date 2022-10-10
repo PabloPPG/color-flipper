@@ -1,30 +1,56 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <div id="header-background">
+    <div id="header" class="container">
+      <a href="/" id="logo">
+        <img
+          src="@/assets/color-circle.png"
+          alt="A color wheel gradient"
+          width="50"
+          height="50"
+        />
+        <p>Color Flipper!</p>
+      </a>
+      <nav>
+        <router-link class="router" to="/simple">Simple</router-link>
+        <router-link class="router" to="/hex">Hex</router-link>
+      </nav>
+    </div>
+  </div>
   <router-view />
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
-
-nav {
-  padding: 30px;
+.router {
+  margin-left: 3rem;
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.container {
+  margin: auto;
+  width: 85%;
 }
-
-nav a.router-link-exact-active {
-  color: #42b983;
+#header-background {
+  background-color: #b7f7c2;
+}
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+}
+#header a {
+  text-decoration: none;
+  color: black;
+}
+#header a > p {
+  margin-left: 1.5rem;
+}
+#logo {
+  display: flex;
+  align-items: center;
 }
 </style>
